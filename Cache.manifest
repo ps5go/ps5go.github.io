@@ -7,11 +7,13 @@ exploit.js
 index.html
 malloc.js
 netcat.html
+netcat2.html
 rop.js
 sigsegv.js
 syscalls2.js
 syscalls.js
 ps5-kstuff.bin
 Style.css
+jquery.min.js
 NETWORK:
 *

