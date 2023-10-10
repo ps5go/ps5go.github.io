@@ -120,31 +120,32 @@ function c_code_done(printf_ans, main_ret)
     if(main_ret)
         alert("Jailbreak failed! Reboot your PS5 and try again!\n"+printf_ans+"\nmain() returned "+main_ret);
     else
-        alert("You're all set!);
+        alert("You're all set!");
     window.sigsegv_handler = 0;
-    runJS('sigsegv.js' );
+    runJS('sigsegv.js');
     read_ptr_at(0);
 }
 
 function runScripts()
 {
-    runJS('exploit.js' );
+    runJS('exploit.js');
     document.body.setAttribute('bgColor', 'green');
-    runJS('malloc.js' );
-    runJS('rop.js' );
-    runJS('syscalls.js' );
-    runJS('syscalls2.js' );
+    runJS('malloc.js');
+    runJS('rop.js');
+    runJS('syscalls.js');
+    runJS('syscalls2.js');
     window.sigsegv_handler = infloop_addr;
-    runJS('sigsegv.js' );
-    runJS('c-code.js' );
+    runJS('sigsegv.js');
+    runJS('c-code.js');
 }
 
 function main()
 {
-
+    if(!document.location.hash.startsWith("#payload="))
+        return runScripts();
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'arraybuffer';
-    xhr.open('GET', 'ps5-kstuff.bin', true);
+    xhr.open('GET', decodeURIComponent(document.location.hash.substr(9)), true);
     xhr.send('');
     xhr.onload = function()
     {
