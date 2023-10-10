@@ -1,104 +1,5 @@
 <html>
 <body>
-<style>
-body{
-background-color:black;
-margin:0;
-padding:0;
-text-align:center;
-}
-.option{
-cursor:crosshair;
-margin:5px auto;
-padding:5px;
-background-color:#fff;
-font-family:微软雅黑;
-font-size:26px;
-width:700px;
-}
-   .rangefan {
-        -webkit-appearance: none;
-        vertical-align: middle;
-        outline: 5;
-        padding: 0;
-        border: 1px solid #fff;
-        background: #ff3300;
-        border-radius: 10px;
-        width: 50%;
-      }
-      .rangefan::-webkit-slider-runnable-track {
-        background-color: 0 0;
-        height: 6px;
-        border-radius: 3px;
-        border: 1px solid transparent;
-      }
-      .rangefan::-webkit-slider-thumb {
-        -webkit-appearance: none !important;
-        border-radius: 100%;
-        background-color: #fff;
-        height: 18px;
-        width: 18px;
-        margin-top: -7px;
-      }
-      .rangefan:active::-ms-thumb {
-        border: none;
-      }
-      #outputfan {
-        border: 1px solid #d7dbdd;
-        font-size: 15px;
-        padding: 0.3em 0.3em;
-        margin: 0.1em;
-        border-radius: 3px;
-        min-width: 2em;
-        text-align: center;
-      }
-      #submitfan {
-        border: 1px solid #d7dbdd;
-        background: 0 0;
-        font-size: 15px;
-        padding: 0.3em 0.3em;
-        margin: 0.1em;
-        border-radius: 3px;
-        text-align: center;
-        color:#fff;
-      }
- button {
-            
-            border: 2px solid black;
-            border-radius: 10px;
-			width: 150px;
-            height: 40px;            
-            text-align: center;
-            padding: 1px;
-            margin: 1px;
-            box-shadow: 0 5px 20px 0 white;
-           
-}
-button:hover {
-            box-shadow: 0 5px 50px 0 white;
-            color: white;
-            border-radius: 10px;
-            background-color: #0F0F53;
-}
-
-   #updateinfo {
-      
-      color: red;
-	  font-size: 26px;
-      
-    }
-	
-	
-    #payload_info {
-      color:red;
-     
-      font-size: 20px;
-   
-    }
-	
-	
-
-</style>
 <script>function print(){}</script>
 <script>
 var cachedJS = {};
@@ -120,7 +21,7 @@ function c_code_done(printf_ans, main_ret)
     if(main_ret)
         alert("Jailbreak failed! Reboot your PS5 and try again!\n"+printf_ans+"\nmain() returned "+main_ret);
     else
-        alert("You're all set!");
+        alert("OK！");
     window.sigsegv_handler = 0;
     runJS('sigsegv.js');
     read_ptr_at(0);

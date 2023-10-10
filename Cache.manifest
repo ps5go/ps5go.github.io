@@ -13,8 +13,16 @@ sigsegv.js
 syscalls2.js
 syscalls.js
 ps5-kstuff.bin
-ftp.bin
 Style.css
 jquery.min.js
+elfloader/index.html
+elfloader/exploit.js
+elfloader/int64.js
+elfloader/rop.js
+elfloader/rop_slave.js
+elfloader/webkit.js
+elfloader/offsets/4.03.js
+
+
 NETWORK:
 *
