@@ -1,4 +1,4 @@
-<html manifest="Cache.manifest">
+﻿<html manifest="Cache.manifest">
 
 <head>
     <meta charset="utf-8" />
@@ -109,6 +109,50 @@ button:hover {
       font-size: 20px;
    
     }
+ 
+#BOX1{
+position:relative;
+
+width:1000px;
+height:40px;
+ 
+text-align:left;
+border:2px solid #DEDEDC;
+border-radius:16px;
+margin:0px 0px 0px 0px;
+padding:1px;
+display:inline-block;
+}
+
+#search-input{
+position:relative;
+
+width:100%;
+background-color:#778899;
+color:white;
+padding:7px 10px 10px 10px;
+font-size:30px;
+border:0px;
+border-radius:14px;
+cursor:pointer;
+}
+#search-input:focus{
+outline:none;
+}
+
+::-webkit-scrollbar{
+width:2px;
+height:3px;
+border-radius:16px;
+}
+::-webkit-scrollbar-track{
+box-shadow:inset 0 0 2px #black; 
+background-color:#1D2025;
+}
+::-webkit-scrollbar-thumb {
+background:grey; 
+}
+
 </style>
 <body> 
 <h1 style="margin-bottom:0;clear:both;text-align:center;"> </h1></div>
@@ -122,7 +166,7 @@ p{color:#000000;}
 
 <br/><br/>
 
-<div style="text-align:center" font size="5" ><div style=color:blue;"><h1 id=msgs style='text-align:center;'>PS5 4.03折腾测试版V3</h1>
+<div style="text-align:center" font size="6" ><div style=color:blue;"><h1 id=msgs style='text-align:center;'>PS5 4.03折腾测试版V3</h1>
 <hr>
 <br/><br/>
 <a href="netcat.html"><button  style='width:350px;font-size:25px;text-align:center;background-color:green;text-shadow: 4px 4px 4px black;color:#FFFFFF'class="pointer" onMouseOver="msgs.innerHTML='有效载荷、插件加载器(端口9019)。'" ; onmouseout="msgs2.innerHTML='PS5 4.03折腾测试版'" type="button"><b>Bin加载器</button></a>
@@ -130,19 +174,101 @@ p{color:#000000;}
 <br/><br/>
 <a href="netcat2.html#payload=ps5-kstuff1.bin"><button  style='width:350px;font-size:25px;text-align:center;background-color:#EE2C2C;text-shadow: 4px 4px 4px black;color:#FFFFFF'class="pointer" onMouseOver="msgs.innerHTML='一键折腾PS4模式 fpkg运行OK（2023.10.7)'" ; onmouseout="msgs2.innerHTML='PS5 4.03折腾测试版'" type="button"><b>一键KSTUFF V1</button></a>
 <a href="netcat2.html#payload=ps5-kstuff2.bin"><button  style='width:350px;font-size:25px;text-align:center;background-color:#EE2C2C;text-shadow: 4px 4px 4px black;color:#FFFFFF'class="pointer" onMouseOver="msgs.innerHTML='一键折腾PS4模式 fpkg运行OK（2023.10.9)'" ; onmouseout="msgs2.innerHTML='PS5 4.03折腾测试版'" type="button"><b>一键KSTUFF V2</button></a>
+
 <a href="netcat2.html#payload=ps5-kstuff3.bin"><button  style='width:350px;font-size:25px;text-align:center;background-color:#EE2C2C;text-shadow: 4px 4px 4px black;color:#FFFFFF'class="pointer" onMouseOver="msgs.innerHTML='一键折腾PS4模式 fpkg运行OK（2023.10.10)'" ; onmouseout="msgs2.innerHTML='PS5 4.03折腾测试版'" type="button"><b>一键KSTUFF V3</button></a>
 
 </body>
 <br/><br/>
 <br/>
 </style>
-<p><b><div style=color:#EE2C2C ;"><font size="5"> 注意：仅适用于4.03系统，其他系统暂时不要升级。内存溢出时点确定继续。</p></font></b></marquee>
+<p><b><div style=color:#EE2C2C ;"><font size="6"> 左上角弹窗时表示成功！请直接按手柄PS键退出浏览器！（点确认键会当机）</p></font></b></marquee>
 <hr><br/>
-<b><a style='font-size:25px;text-align:center;color:black;'>开发人员: theflow 、sleirsgoevy、SpecterDev、ChendoChap...
-<br/><br/>
-<b><a style='font-size:25px;text-align:center;color:black;'>2023.10.10
+<b><a style='font-size:25px;text-align:center;color:black;'>开发人员: theflow 、sleirsgoevy、SpecterDev、ChendoChap、leeful...
+<br/>
+<b><a style='font-size:25px;text-align:center;color:black;'>2023.10.13<br/><br/>
 </script>
 </body>
 </html>
 
+</head>
+<body>
+地址栏
+<div id=BOX1 >
+<input id="search-input" type="url" value="http://">
+</div>
 
+<button id=gobut  onclick='goToURL();'> 搜索</button>
+</div>
+<br/>
+<div id=BOX3>
+<button class="leeful smaller" id=clrHis onclick="clearHistory()">清除记录</button>
+
+</div>
+<div id=histid>
+<h3>历史记录:<h3>
+<div id=hist></div>
+</div>
+<script>
+url="";
+x=document.getElementById("search-input");
+
+if(!navigator.userAgent.includes('PlayStation 5')) {
+ alert("此页面只能在 PS5 主机上正确显示!");
+}
+
+if(localStorage.history==null){
+ localStorage.history=""
+};
+
+if(localStorage.fav==null){
+localStorage.fav="<a href='https://leeful.github.io/ps5/v1' target='_self'>https://leeful.github.io/ps5/v1</a><button onclick='url=this.previousElementSibling.innerHTML;remFav()'>DELETE</button><br>";
+localStorage.fav+="<a href='http://ps5go.github.io' target='_self'>http://ps5go.github.io</a><button onclick='url=this.previousElementSibling.innerHTML;remFav()'>DELETE</button><br>";
+}
+ 
+function goToURL(){
+ addHist()
+ window.location.href = x.value;
+}
+ 
+function clearHistory(){
+ if (confirm('您确定要删除您的历史记录吗?')) {
+  localStorage.history="";
+  hist.innerHTML=localStorage.history;
+ } else {return}
+}
+ 
+function clearFavorites(){
+ if (confirm('您确定要删除您的收藏夹吗?')) {
+  localStorage.fav="";
+  favs.innerHTML=localStorage.fav;
+ } else {return}
+}
+
+function addHist() {
+ a = localStorage.history;
+ b = "<a href='"+x.value+"' target='_self'>"+x.value+" </a><br>";
+ localStorage.history = b+a;
+}
+
+function addFav(){
+ a = localStorage.fav;
+ b = "<a href='"+url+"' target='_self'>"+url+"</a><br>";
+ alert(url+"\nAdded To Favorites");
+ localStorage.fav = b+a;
+ favs.innerHTML=localStorage.fav;
+}
+
+function remFav(){
+ if (confirm('您确定要删除此收藏夹吗?')) {
+  favlistBefore = localStorage.fav;
+  removefav = "<a href='"+url+"' target='_self'>"+url+"</a><button onclick='url=this.previousElementSibling.innerHTML;remFav()'>DELETE</button><br>";
+  localStorage.fav = favlistBefore.replace(removefav, "");
+  favs.innerHTML=localStorage.fav;
+ } else {return}
+}
+
+hist.innerHTML=localStorage.history;
+favs.innerHTML=localStorage.fav;
+</script>
+</body>
+</html>
