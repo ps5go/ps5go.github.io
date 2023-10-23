@@ -2,28 +2,31 @@ CACHE MANIFEST
 # random: 644689c7d9858ef67c0699d805b0f7f6
 
 CACHE:
-c-code.js
+custom_host_stuff.js
 exploit.js
 index.html
-malloc.js
-netcat.html
-netcat2.html
+int64.js
+main.css
+payload_map.js
 rop.js
-sigsegv.js
-syscalls2.js
-syscalls.js
-ps5-kstuff1.bin
-ps5-kstuff2.bin
-ps5-kstuff3.bin
+rop_slave.js
 Style.css
-jquery.min.js
-elfloader/index.html
-elfloader/exploit.js
-elfloader/int64.js
-elfloader/rop.js
-elfloader/rop_slave.js
-elfloader/webkit.js
-elfloader/offsets/4.03.js
+webkit.js
+payloads/cache_remove.elf
+payloads/elfldr.elf
+payloads/ftps5-np.elf
+payloads/ftps5-p.elf
+payloads/ps5-kstuff-v1.1.bin
+payloads/versions.elf
+offsets/3.00.js
+offsets/3.10.js
+offsets/3.20.js
+offsets/3.21.js
+offsets/4.00.js
+offsets/4.02.js
+offsets/4.03.js
+offsets/4.50.js
+offsets/4.51.js
 
 
 NETWORK:
