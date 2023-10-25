@@ -1,7 +1,15 @@
 const payload_map =
     [
+	    {
+            displayTitle: '一键折腾 (仅4.03)',
+            description: '允许解密/运行fpkg应用程序',
+            fileName: 'ps5-kstuff.bin',
+            author: 'sleirsgoevy',
+            source: 'https://github.com/sleirsgoevy/ps4jb2/blob/ps5-403/ps5-kstuff.bin',
+            version: '1.0'
+        },
         {
-            displayTitle: '403-450一键折腾V1.1',
+            displayTitle: '一键折腾V1.1（4.03-4.50）',
             description: '允许解密/运行fpkg应用程序',
             fileName: 'ps5-kstuff-v1.1.bin',
             author: 'sleirsgoevy',
@@ -31,14 +39,6 @@ const payload_map =
             author: 'SiSTR0, zecoxao, EchoStretch',
             source:'https://github.com/EchoStretch/FTPS5/releases',
             version: '1.4'
-        },
-        {
-            displayTitle: '系统版本查看',
-            description: '显示内核构建、操作系统和sdk版本',
-            fileName: 'versions.elf',
-            author: '?',
-            source:'https://mega.nz/folder/4xA2ATTI#6lHvye1JUfhxRGvqOva8fw/folder/gwhWmRrB',
-            version: '1.0'
         },
         {
             displayTitle: '清除浏览器缓存',
