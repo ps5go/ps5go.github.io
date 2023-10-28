@@ -1,19 +1,54 @@
-<html manifest="Cache.manifest">
 
+
+<title>★ DEBUG PS5</title>
 <head>
-    <meta charset="utf-8" />
-    <title>PS5(3.xx-4.xx)</title>
-    <link rel="shortcut icon" href="favicon.ico"></link>
-</head>   
-<body>
-<style>body{background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;}</style>
-<style>img:hover {transform: scale(1.2); /* (100% zoom - Note: if the zoom is too large, it will go outside of the viewport) */}</style>
-<style>.center{display: block;margin-left: auto;margin-right: auto;}</style>
-<script>
-function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="正在安装离线缓存菜单: " + Percent + "%";}
-function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="离线缓存菜单安装完成";},2000);setTimeout(function(){window.msgs.innerHTML="可以开始了";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-</script>
+<link rel="stylesheet" href="main.css">
+<style>
+html, body {
+            margin: 0;
+            overflow: hidden; /* Ocultar barra de desplazamiento */
+        }
 
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* El vídeo llena toda el área. */
+            z-index: -1; /* Haz el vídeo debajo de otro contenido. */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Haz el contenido encima del vídeo. */
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+</style>
+</head>
+<body>
+    <video id="video-background" autoplay>
+        <source src="video.mp4" type="video/mp4">
+        <!-- Admite videos en diferentes formatos, agregue más según sea necesario <source> -->
+    </video>
+    <script>
+        // Función que se ejecutará automáticamente al cargar la página
+        function runJailbreak() {
+            // Coloca aquí el código que deseas ejecutar al entrar en la página
+            alert("La función runJailbreak se ha ejecutado automáticamente al entrar en la página.");
+        }
+        
+        // Evento que se dispara cuando la página se carga completamente
+        window.addEventListener('load', function () {
+            runJailbreak(); // Ejecutar la función al cargar la página
+        });
+    </script>
+</head>
+<body>
+
+</body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
 
@@ -25,6 +60,7 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="离
     <script defer src="exploit.js"></script>
     <script defer src="payload_map.js"></script>
     <script defer src="custom_host_stuff.js"></script>
+    <script defer src="appcache_handler.js"></script>
     <script>
         window.addEventListener('load', function () {
             add_cache_event_toasts();
@@ -39,31 +75,26 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="离
     <div id="toast-container"></div>
 
     <div style="margin: 2.5rem;">
-<body> 
-<h1 style="margin-bottom:0;clear:both;text-align:center;"> </h1></div>
-</style>
-<body> 
-<div style="text-align:center" font size="6" ><div style=color:white;"><h1 id=msgs style='text-align:center;'>PS5 折腾(3.xx-4.xx)</h1>
-<hr> 
-        <p id="current-fw" class="text-secondary" style="text-align: center;font-size:28px;color:red"></p>
+        <h1 style="text-align: center;"></h1>
+        <p id="current-fw" class="text-secondary" style="text-align: center; position: absolute; top: 30;left: 41;">
     </div>
 
     <div id="before-jb-view">
 
         <div id="run-jb-parent" class="opacity-transition"
-            style="display: flex; justify-content: center; align-items: center; position: absolute; top: 0;left: 0; width: 100%; height: 100%;">
-            <a tabindex="0" class="btn" style="max-width: 50%;" id="run-jb" onclick="runJailbreak()">开始越狱</a>
+            style="display: flex; justify-content: center; align-items: center; position: absolute; top: 0;left: -139;">
+            <a tabindex="0" class="btn" style="max-width: 50%;" id="run-jb" onclick="runJailbreak()">.</a>
         </div>
 
-        <div id="jb-progress" class=""
-            style="display: none; flex-direction: column; justify-content: center; align-items: center; position: absolute; top: 0;left: 0; width: 100%; height: 100%;">
-            <div class="lds-ellipsis">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+
+        <div id="jb-progress" class="log" style="display: none;">
+
+              </script>  
+
             </div>
-            <p id="jb-progress-status-text" style="text-align: center; olor:white; width: 100%;font-size:28px;">加载中... <br/><span class="secondary-text">(如果冻结，请重启再试)</span></p>
+            <p id="jb-progress-status-text" style="text-align: center; position: absolute; top: 0;left: 41;">
+   
+                <br/><span class="secondary-text"></span></p>
             <textarea id="console" class="log" style="display: none;"></textarea>
         </div>
 
@@ -160,13 +191,10 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="离
 
         <center style="position: fixed;bottom: 0;width: 100%;margin-bottom: 1.5rem;" class="info opacity-transition"
             id="credits">
-<hr><br/>
-			<a  style='font-size:20px;text-align:center;'>
-             开发人员：Specter、Andy Nguyen/theflow0 、ChendoChap、sleirsgoevy、flatz、cheburek3000、zecoxao...</b></a>
-			 <br>
-			<a  style='font-size:20px;text-align:center;'>
-             2023.10.28</b></a>
-        </h3>
+            <h3>
+                <b></b>
+
+            </h3>
         </center>
     </div>
 

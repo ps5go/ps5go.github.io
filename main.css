@@ -103,6 +103,7 @@ body {
     font-family: 'Sans-Serif', Helvetica;
 }
 
+
 .btn {
     padding: 1rem 2rem;
     text-align: center;
@@ -160,6 +161,7 @@ a:active, a:focus {
     grid-gap: 10px;
     justify-content: center;
     text-align: center;
+    width: 100%;
 }
 
 .grid-item {
