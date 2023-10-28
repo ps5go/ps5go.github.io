@@ -32,11 +32,11 @@ function add_cache_event_toasts() {
     var appCache = window.applicationCache;
     
     if (!navigator.onLine) {
-        showToast('You are offline.');
+        showToast('\u60a8\u5904\u4e8e\u8131\u673a\u72b6\u6001.');
     }
 
     appCache.addEventListener('cached', function (e) {
-        showToast('Finished caching site.');
+        showToast('\u5df2\u5b8c\u6210\u7f13\u5b58.');
     }, false);
 
     // appCache.addEventListener('checking', function (e) {
@@ -44,22 +44,22 @@ function add_cache_event_toasts() {
     // }, false);
 
     appCache.addEventListener('downloading', function (e) {
-        showToast('Downloading new cache.');
+        showToast('\u6b63\u5728\u4e0b\u8f7d\u65b0\u7f13\u5b58.');
     }, false);
 
     appCache.addEventListener('error', function (e) {
         // only show error toast if we're online
         if (navigator.onLine) {
-            showToast('Error while caching site.', 5000);
+            showToast('\u7f13\u5b58\u7f51\u7ad9\u65f6\u51fa\u9519.', 5000);
         }
     }, false);
 
     appCache.addEventListener('noupdate', function (e) {
-        showToast('Cache is up-to-date.');
+        showToast('\u7f13\u5b58\u662f\u6700\u65b0\u7684.');
     }, false);
 
     appCache.addEventListener('obsolete', function (e) {
-        showToast('Site is obsolete.');
+        showToast('\u7f51\u7ad9\u5df2\u5e9f\u5f03.');
     }, false);
 
     // appCache.addEventListener('progress', function (e) {
@@ -68,7 +68,7 @@ function add_cache_event_toasts() {
 
     appCache.addEventListener('updateready', function (e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-            showToast('The site was updated. Refresh to switch to updated version',8000);
+            showToast('\u7f51\u7ad9\u5df2\u66f4\u65b0\u3002\u5237\u65b0\u4ee5\u5207\u6362\u5230\u66f4\u65b0\u7684\u7248\u672c',8000);
         }
     }, false);
 

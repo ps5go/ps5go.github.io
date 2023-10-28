@@ -103,7 +103,6 @@ body {
     font-family: 'Sans-Serif', Helvetica;
 }
 
-
 .btn {
     padding: 1rem 2rem;
     text-align: center;
@@ -113,14 +112,14 @@ body {
     cursor: pointer;
     line-height: 2.5rem;
     /* height: 2.5rem; */
-    min-width: 75px;
+    min-width: 175px;
     /* border-radius: 5rem; */
     border-radius: 1rem;
-    width: 70%;
+	width: 530px;
     background-color:green;
     border: none;
     color: #fff;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     transition: background-color 0.3s ease-in-out;
 	box-shadow: 0 5px 20px 0 white;
 }
@@ -161,7 +160,6 @@ a:active, a:focus {
     grid-gap: 10px;
     justify-content: center;
     text-align: center;
-    width: 100%;
 }
 
 .grid-item {

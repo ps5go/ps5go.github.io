@@ -1,62 +1,7 @@
-<html manifest="cache.manifest">
+<html manifest="cache.appcache">
 
-<title>★ DEBUG PS5</title>
 <head>
-<link rel="stylesheet" href="main.css">
-<style>
-html, body {
-            margin: 0;
-            overflow: hidden; /* Ocultar barra de desplazamiento */
-        }
-
-        #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* El vídeo llena toda el área. */
-            z-index: -1; /* Haz el vídeo debajo de otro contenido. */
-        }
-
-        .content {
-            position: relative;
-            z-index: 1; /* Haz el contenido encima del vídeo. */
-            text-align: center;
-            padding: 10px;
-            color: white;
-        }
-</style>
-</head>
-
-<body>
-<style>body{background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;}</style>
-<style>img:hover {transform: scale(1.2); /* (100% zoom - Note: if the zoom is too large, it will go outside of the viewport) */}</style>
-<style>.center{display: block;margin-left: auto;margin-right: auto;}</style>
-<script>
-function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Downloading : " + Percent + "%";}
-function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="You are offline.";},2000);setTimeout(function(){window.msgs.innerHTML="PS5 DEBUG 3.xx-4.xx";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-</script>
-    <video id="video-background" autoplay>
-        <source src="video.mp4" type="video/mp4">
-        <!-- Admite videos en diferentes formatos, agregue más según sea necesario <source> -->
-    </video>
-    <script>
-        // Función que se ejecutará automáticamente al cargar la página
-        function runJailbreak() {
-            // Coloca aquí el código que deseas ejecutar al entrar en la página
-            alert("La función runJailbreak se ha ejecutado automáticamente al entrar en la página.");
-        }
-        
-        // Evento que se dispara cuando la página se carga completamente
-        window.addEventListener('load', function () {
-            runJailbreak(); // Ejecutar la función al cargar la página
-        });
-    </script>
-</head>
-<body>
-
-</body>
+    <title>PS5&#x6298;&#x817E; 3.xx-4.xx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
 
@@ -83,34 +28,28 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="You
     <div id="toast-container"></div>
 
     <div style="margin: 2.5rem;">
-        <h1 style="text-align: center;"></h1>
-        <p id="current-fw" class="text-secondary" style="text-align: center; position: absolute; top: 30;left: 41;color:green;">
+        <h1 style="text-align: center;">PS5&#x6298;&#x817E; 3.xx-4.xx</h1>
+        <p id="current-fw" class="text-secondary" style="text-align: center;font-size:28px;color:green;"></p>
     </div>
 
     <div id="before-jb-view">
 
         <div id="run-jb-parent" class="opacity-transition"
-            style="display: flex; justify-content: center; align-items: center; position: absolute; top: 0;right: 41;color:red;">
-            <a tabindex="0" class="btn" style="max-width: 50%;" id="run-jb" onclick="runJailbreak()">.</a>
+            style="display: flex; justify-content: center; align-items: center; position: absolute; top: 0;left: 0; width: 100%; height: 100%;">
+            <a tabindex="0" class="btn" style="max-width: 50%;" id="run-jb" onclick="runJailbreak()">&#x5F00;&#x59CB;&#x8D8A;&#x72F1;</a>
         </div>
 
-
-        <div id="jb-progress" class="log" style="display: none;">
-
-              </script>  
-
+        <div id="jb-progress" class=""
+            style="display: none; flex-direction: column; justify-content: center; align-items: center; position: absolute; top: 0;left: 0; width: 100%; height: 100%;">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-            <p id="jb-progress-status-text" style="text-align: center; position: absolute; top: 0;right: 41;">
-   
-                <br/><span class="secondary-text"></span></p>
+            <p id="jb-progress-status-text" style="text-align: center; width: 100%;font-size:32px;">&#x52A0;&#x8F7D;&#x4E2D;... <br/><span class="secondary-text">((&#x5982;&#x679C;&#x51BB;&#x7ED3;&#xFF0C;&#x8BF7;&#x91CD;&#x542F;&#x518D;&#x8BD5;)</span></p>
             <textarea id="console" class="log" style="display: none;"></textarea>
         </div>
-<body> 
-<h1 style="margin-bottom:0;clear:both;text-align:center;"> </h1></div>
-</style>
-<body> 
-<div><h1 id=msgs style='text-align:center;color:red;font-size:46px;font-weight:bold;margin:0 0 0 0.0;text-shadow:3px 2px #fff;'>PS5 DEBUG 3.xx-4.xx</h1>
-<hr>  <br/><br/>
 
         <div id="post-jb-view" class="opacity-transition"
             style="display: flex; flex-direction: column; justify-content: center; align-items: center;opacity: 0; pointer-events: none; padding-top: 2rem;">
@@ -201,12 +140,12 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="You
             </div>
         </div>
 
-<hr><br/>
+
 
         <center style="position: fixed;bottom: 0;width: 100%;margin-bottom: 1.5rem;" class="info opacity-transition"
             id="credits">
             <h3>
-                <b>v1.04.</b>
+                <b>2023.10.29</b>
                 <br />
                 <a href="https://twitter.com/theflow0" aria-hidden="true" tabindex="-1">@theflow0</a>,
                 <a href="https://twitter.com/SpecterDev" aria-hidden="true" tabindex="-1">@SpecterDev</a>,
