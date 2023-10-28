@@ -1,24 +1,7 @@
 CACHE MANIFEST
-# random: 644689c7d9858ef67c0699d805b0f7f6
+# Versión del manifiesto
+# Comentarios comienzan con el carácter #
 
-CACHE:
-custom_host_stuff.js
-exploit.js
-index.html
-int64.js
-main.css
-payload_map.js
-rop.js
-rop_slave.js
-Style.css
-webkit.js
-payloads/cache_remove.elf
-payloads/elfldr.elf
-payloads/ftps5-np.elf
-payloads/ftps5-p.elf
-payloads/ps5-kstuff.bin
-payloads/ps5-kstuff-v1.1.bin
-payloads/versions.elf
 offsets/3.00.js
 offsets/3.10.js
 offsets/3.20.js
@@ -28,7 +11,23 @@ offsets/4.02.js
 offsets/4.03.js
 offsets/4.50.js
 offsets/4.51.js
-
+payloads/Cache_remove.elf
+payloads/elfldr.elf
+payloads/ftps5-p.elf
+payloads/ps5-kstuff-v1.1.bin
+payloads/versions.elf
+payloads/TO99999999.elf
+appcache_handler.js
+custom_host_stuff.js
+exploit.js
+index.html
+int64.js
+main.css
+payload_map.js
+rop.js
+rop_slave.js
+service_worker.js
+webkit.js
 
 NETWORK:
 *

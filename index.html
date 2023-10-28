@@ -28,7 +28,15 @@ html, body {
         }
 </style>
 </head>
+
 <body>
+<style>body{background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;}</style>
+<style>img:hover {transform: scale(1.2); /* (100% zoom - Note: if the zoom is too large, it will go outside of the viewport) */}</style>
+<style>.center{display: block;margin-left: auto;margin-right: auto;}</style>
+<script>
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Downloading : " + Percent + "%";}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="You are offline.";},2000);setTimeout(function(){window.msgs.innerHTML="PS5 DEBUG 3.xx-4.xx";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
     <video id="video-background" autoplay>
         <source src="video.mp4" type="video/mp4">
         <!-- Admite videos en diferentes formatos, agregue más según sea necesario <source> -->
@@ -76,13 +84,13 @@ html, body {
 
     <div style="margin: 2.5rem;">
         <h1 style="text-align: center;"></h1>
-        <p id="current-fw" class="text-secondary" style="text-align: center; position: absolute; top: 30;left: 41;">
+        <p id="current-fw" class="text-secondary" style="text-align: center; position: absolute; top: 30;left: 41;color:green;">
     </div>
 
     <div id="before-jb-view">
 
         <div id="run-jb-parent" class="opacity-transition"
-            style="display: flex; justify-content: center; align-items: center; position: absolute; top: 0;left: -139;">
+            style="display: flex; justify-content: center; align-items: center; position: absolute; top: 0;right: 41;color:red;">
             <a tabindex="0" class="btn" style="max-width: 50%;" id="run-jb" onclick="runJailbreak()">.</a>
         </div>
 
@@ -92,11 +100,17 @@ html, body {
               </script>  
 
             </div>
-            <p id="jb-progress-status-text" style="text-align: center; position: absolute; top: 0;left: 41;">
+            <p id="jb-progress-status-text" style="text-align: center; position: absolute; top: 0;right: 41;">
    
                 <br/><span class="secondary-text"></span></p>
             <textarea id="console" class="log" style="display: none;"></textarea>
         </div>
+<body> 
+<h1 style="margin-bottom:0;clear:both;text-align:center;"> </h1></div>
+</style>
+<body> 
+<div><h1 id=msgs style='text-align:center;color:red;font-size:46px;font-weight:bold;margin:0 0 0 0.0;text-shadow:3px 2px #fff;'>PS5 DEBUG 3.xx-4.xx</h1>
+<hr>  <br/><br/>
 
         <div id="post-jb-view" class="opacity-transition"
             style="display: flex; flex-direction: column; justify-content: center; align-items: center;opacity: 0; pointer-events: none; padding-top: 2rem;">
@@ -187,13 +201,24 @@ html, body {
             </div>
         </div>
 
-
+<hr><br/>
 
         <center style="position: fixed;bottom: 0;width: 100%;margin-bottom: 1.5rem;" class="info opacity-transition"
             id="credits">
             <h3>
-                <b></b>
-
+                <b>v1.04.</b>
+                <br />
+                <a href="https://twitter.com/theflow0" aria-hidden="true" tabindex="-1">@theflow0</a>,
+                <a href="https://twitter.com/SpecterDev" aria-hidden="true" tabindex="-1">@SpecterDev</a>,
+                ChendoChap,
+                <a href="https://twitter.com/Znullptr" aria-hidden="true" tabindex="-1">@Znullptr</a>,
+                <a href="https://twitter.com/sleirsgoevy" aria-hidden="true" tabindex="-1">@sleirsgoevy</a>,
+                <br />
+                <a href="https://twitter.com/psxdev" aria-hidden="true" tabindex="-1">@psxdev</a>,
+                <a href="https://twitter.com/flat_z" aria-hidden="true" tabindex="-1">@flat_z</a>,
+                <a href="https://twitter.com/notzecoxao" aria-hidden="true" tabindex="-1">@notzecoxao</a>,
+                <a href="https://twitter.com/SocraticBliss" aria-hidden="true" tabindex="-1">@SocraticBliss</a>,
+                laureeeeeee
             </h3>
         </center>
     </div>
