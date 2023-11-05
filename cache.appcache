@@ -23,5 +23,5 @@ payloads/cache_remove.elf
 payloads/elfldr.elf
 payloads/ftps5-np.elf
 payloads/ftps5-p.elf
-payloads/ps5-kstuff-v1.1.bin
+payloads/ps5-kstuff.bin
 payloads/versions.elf

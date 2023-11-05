@@ -14,7 +14,7 @@ offsets/4.51.js
 payloads/Cache_remove.elf
 payloads/elfldr.elf
 payloads/ftps5-p.elf
-payloads/ps5-kstuff-v1.1.bin
+payloads/ps5-kstuff.bin
 payloads/versions.elf
 payloads/TO99999999.elf
 appcache_handler.js
