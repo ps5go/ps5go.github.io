@@ -2,7 +2,7 @@ const payload_map =
     [
         {
             displayTitle: '\u4e00\u952e\u6298\u817e',
-            description: '\u4ec5\u9002\u7528\u4e8e4.03-4.50\u7cfb\u7edf',
+            description: '\u4ec5\u9002\u7528\u4e8e4.03-4.51\u7cfb\u7edf',
             fileName: 'ps5-kstuff.bin',
             author: 'sleirsgoevy',
             source: 'https://github.com/sleirsgoevy/ps4jb2/blob/ps5-403/ps5-kstuff.bin',
