@@ -8,6 +8,14 @@ const payload_map =
             source: 'https://github.com/sleirsgoevy/ps4jb2/blob/ps5-403/ps5-kstuff.bin',
             version: '1.2'
         },
+		{
+            displayTitle: 'etaHEN\u4e00\u952e\u6298\u817e',
+            description: '\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e4.03-4.51\u7cfb\u7edf.',
+            fileName: 'etaHEN-1.2B.bin',
+            author: 'LightningMods_, sleirsgoevy, ChendoChap, astrelsky, illusion',
+            source: 'https://github.com/LightningMods/etaHEN',
+            version: '1.2 beta'
+        },
         {
             displayTitle: 'ELF\u52a0\u8f7d\u5668',
             description: '\u7aef\u53e39021',
@@ -15,14 +23,6 @@ const payload_map =
             author: 'john-tornblom',
             source:'https://github.com/john-tornblom/ps5-payload-elfldr/releases',
             version: '0.5'
-        },
-        {
-            displayTitle: 'FTP\u670d\u52a1 (\u975e\u6301\u4e45\u6027)',
-            description: '\u7aef\u53e31337',
-            fileName: 'ftps5-np.elf',
-            author: 'SiSTR0, zecoxao, EchoStretch',
-            source:'https://github.com/EchoStretch/FTPS5/releases',
-            version: '1.4'
         },
         {
             displayTitle: 'FTP\u670d\u52a1 (\u6301\u4e45\u6027)',
