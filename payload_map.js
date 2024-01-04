@@ -2,7 +2,7 @@ const payload_map =
     [
         {
             displayTitle: '\u4e00\u952e\u6298\u817e',
-            description: '\u4ec5\u9002\u7528\u4e8e4.03-4.51\u7cfb\u7edf',
+            description: '\u4ec5\u9002\u7528\u4e8e3.xx-4.xx\u7cfb\u7edf',
             fileName: 'ps5-kstuff.bin',
             author: 'sleirsgoevy',
             source: 'https://github.com/sleirsgoevy/ps4jb2/blob/ps5-403/ps5-kstuff.bin',
@@ -10,11 +10,11 @@ const payload_map =
         },
 		{
             displayTitle: 'etaHEN\u4e00\u952e\u6298\u817e',
-            description: '\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e4.03-4.51\u7cfb\u7edf.',
-            fileName: 'etaHEN-1.2B.bin',
+            description: '\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e4.xx-4.xx\u7cfb\u7edf.',
+            fileName: 'etahen.bin',
             author: 'LightningMods_, sleirsgoevy, ChendoChap, astrelsky, illusion',
             source: 'https://github.com/LightningMods/etaHEN',
-            version: '1.2 beta'
+            version: '1.3 beta'
         },
         {
             displayTitle: 'ELF\u52a0\u8f7d\u5668',
