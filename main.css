@@ -65,21 +65,6 @@
     }
 }
 
-
-/* .info {
-    overflow: hidden;
-    position: fixed;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    font-size: 45px;
-    font-family: sans-serif;
-    color: #b8b8b8;
-
-    transform: translate(-50%, -50%);
-} */
-
 .j {
     font-size: 15px;
     color: #2F3335;
@@ -98,9 +83,16 @@
 }
 
 body {
-    background-color: #131313;
-    color: #fff;
-    font-family: 'Sans-Serif', Helvetica;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgb(14, 14, 20);
+    color: white;
+    /* font-family: Calibri, Helvetica, 'Sans-Serif'; */
+    font-family: Arial;
+}
+
+input:focus {
+    outline: none;
 }
 
 .btn {
@@ -130,10 +122,46 @@ body {
 }
 
 
-a:active, a:focus {
+.small-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #223;
+    width: 100%;
+    min-width: unset;
+}
+
+.icon-btn {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: unset;
+    width: unset;
+    min-width: unset;
+    width: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.icon-btn:hover {
+    background-color: #555 !important;
+    color: #fff !important;
+}
+
+.btn:hover {
+    background-color: red;
+    color: #fff;
+}
+
+a:active,
+a:focus {
     outline: 0;
     border: none;
-  }
+}
 
 .secondary-text {
     color: #959595;
@@ -142,8 +170,42 @@ a:active, a:focus {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 0.8em;
+    font-size: 13px;
 
+}
+
+
+.payload-name {
+    line-height: 32px;
+    font-weight: bolder;
+}
+
+
+.payload-description {
+    color: #959595;
+    margin: 0;
+    padding: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 32px;
+    font-size: 15px;
+}
+
+.btn:hover p.payload-description {
+    color: #666;
+}
+
+.payload-author {
+    color: #777;
+    margin: 0;
+    padding: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 24px;
+    font-size: 13px;
+    font-weight: normal;
 }
 
 .info a {
@@ -160,13 +222,7 @@ a:active, a:focus {
     grid-gap: 10px;
     justify-content: center;
     text-align: center;
-}
-
-.grid-item {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
 .mx-auto {
@@ -180,16 +236,101 @@ a:active, a:focus {
 }
 
 .opacity-transition {
-    opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
-.hidden-btn{
+.hidden-btn {
     padding: 0;
     visibility: collapse;
 }
 
-#payloads-list a p{
+.grid-container a p {
     margin: 0;
     padding: 0;
 }
+
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    background: #181830;
+    color: #fff;
+    padding: 20px 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    min-width: 300px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.4s, transform 0.4s;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+body {
+    margin: 0;
+    background-color: #131313;
+    color: #fff;
+}
+
+#PScontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes rotationCycle {
+    0% {
+        transform: rotate(-90deg) scale(0)
+    }
+
+    40% {
+        transform: rotate(0deg) scale(1)
+    }
+
+    50% {
+        transform: rotate(0deg) scale(1)
+    }
+
+    100% {
+        transform: rotate(90deg) scale(0)
+    }
+}
+
+#PScontainer img {
+    animation-name: rotationCycle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    height: 60px;
+    width: auto;
+    padding: 10px;
+}
+
+#PScontainer img:nth-child(2) {
+    animation-delay: 200ms
+}
+
+#PScontainer img:nth-child(3) {
+    animation-delay: 300ms
+}
+
+#PScontainer img:nth-child(4) {
+    animation-delay: 400ms
+	}
