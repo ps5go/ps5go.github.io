@@ -11,7 +11,26 @@
     <script defer src="payload_map.js"></script>
     <script defer src="custom_host_stuff.js"></script>
     <script defer src="appcache_handler.js"></script>
+    <script defer src="module/utils.js"></script>
+    <script defer src="module/constants.js"></script>
+    <script defer src="module/int64.js"></script>
+    <script defer src="module/mem.js"></script>
+    <script defer src="module/memtools.js"></script>
+    <script defer src="module/rw.js"></script>
+    <script defer src="webkit_psfree.js"></script>
+    <script defer src="webkit_fontface.js"></script>
     <script>
+        addEventListener('unhandledrejection', (event) => {
+            const reason = event.reason;
+            // We log the line and column numbers as well since some exceptions (like
+            // SyntaxError) do not show it in the stack trace.
+            alert(
+                `${reason}\n`
+                + `${reason.sourceURL}:${reason.line}:${reason.column}\n`
+                + `${reason.stack}`
+            );
+            throw reason;
+        });
         window.addEventListener('load', function () {
             onload_setup();
         }, false);
@@ -33,12 +52,11 @@
     </svg>
 
     <div id="toast-container"></div>
-
-
+    
     <div id="redirector-view"
         style="min-width: 100%; max-width: 100%; position: absolute; top: 0; left: -100%; min-height: 100%; max-height: 100%;">
         <div style="overflow-y: scroll; width: 100%;max-height: 100vh;min-height: 100vh;" id="redirector-view-inner">
-            <h1 style="text-align: center;">&#x5730;&#x5740;&#x91CD;&#x5B9A;&#x5411;&#x670D;&#x52A1;</h1>
+            <h2 style="text-align: center;">&#x5730;&#x5740;&#x91CD;&#x5B9A;&#x5411;&#x670D;&#x52A1;</h2>
             <div style="padding: 25px;padding-top: 0; display: flex;">
                 <input id="redirector-input" type="text" value="http://"
                     style="width: 100%; border-radius: 10px; padding: 15px; background-color: #223; color: #fff; border-color: #334; font-size: 20px;" />
@@ -69,17 +87,30 @@
                 <br />
             </p>
         </div>
-        <div style="position: absolute; margin: 35px; top: 0; left: 10px;" class="opacity-transition" id="l2-redirect">
-            <div>
-                <span style="vertical-align: middle;display: inline-block;                ">
-                    <svg viewbox="0 0 79 61" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height:32px;">
-                        <rect x="0" y="0" width="79" height="61" rx="13" ry="13" fill="#bdc0c2" />
-                        <text x="50%" y="50%" dy="17.5px" text-anchor="middle" fill="#4e4e4e" font-size="50"
-                            font-weight="bold">L2</text>
-                    </svg>
-                </span>
-                <span
-                    style="font-size: 18px; vertical-align: middle;display: inline-block; margin-left: 14px; font-weight: bold; color: #aaa;">&#x5730;&#x5740;&#x91CD;&#x5B9A;&#x5411;&#x670D;&#x52A1;</span>
+        <div style="position: absolute; margin: 20px; margin-right:28px; bottom: 0; right: 0px;" class="opacity-transition" id="l2-redirect">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 35px;">
+                <div >
+                    <span style="vertical-align: middle;display: inline-block;                ">
+                        <svg viewbox="0 0 79 61" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height:32px;">
+                            <rect x="0" y="0" width="79" height="61" rx="13" ry="13" fill="#bdc0c2" />
+                            <text x="50%" y="50%" dy="17.5px" text-anchor="middle" fill="#4e4e4e" font-size="50"
+                                font-weight="bold">L2</text>
+                        </svg>
+                    </span>
+                    <span
+                        style="font-size: 20px; vertical-align: middle;display: inline-block; margin-left: 8px; font-weight: bold; color: #fff;">&#x5730;&#x5740;&#x91CD;&#x5B9A;&#x5411;&#x670D;&#x52A1;</span>
+                </div>
+                <div >
+                    <span style="vertical-align: middle;display: inline-block;                ">
+                        <svg viewbox="0 0 79 61" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height:32px;">
+                            <rect x="0" y="0" width="79" height="61" rx="13" ry="13" fill="#bdc0c2" />
+                            <text x="50%" y="50%" dy="17.5px" text-anchor="middle" fill="#4e4e4e" font-size="50"
+                                font-weight="bold">R2</text>
+                        </svg>
+                    </span>
+                    <span
+                        style="font-size: 20px; vertical-align: middle;display: inline-block; margin-left: 8px; font-weight: bold; color: #fff;">&#x8D8A;&#x72F1;&#x8BBE;&#x7F6E;</span>
+                </div>
             </div>
         </div>
 
@@ -98,8 +129,8 @@
                     <div></div>
                     <div></div>
                 </div>
-            <p id="jb-progress-status-text" style="text-align: center; width: 100%;font-size:32px;">&#x52A0;&#x8F7D;&#x4E2D;... <br/><span class="secondary-text">(&#x5982;&#x679C;&#x51BB;&#x7ED3;&#xFF0C;&#x8BF7;&#x91CD;&#x542F;&#x518D;&#x8BD5;)</span></p>
-            <textarea id="console" class="log" style="display: none;"></textarea>
+                <p id="jb-progress-status-text" style="text-align: center; width: 100%;font-size:32px;">&#x52A0;&#x8F7D;&#x4E2D;... <br/><span class="secondary-text">(&#x5982;&#x679C;&#x51BB;&#x7ED3;&#xFF0C;&#x8BF7;&#x91CD;&#x542F;&#x518D;&#x8BD5;)</span></p>
+                <textarea id="console" class="log" style="display: none;"></textarea>
             </div>
 
             <div id="post-jb-view" class="opacity-transition"
@@ -109,19 +140,34 @@
                 </div>
             </div>
 
-        <center style="position: fixed;bottom: 0;width: 100%;margin-bottom: 1.5rem;" class="info opacity-transition"
-            id="credits">
-<hr><br/>
+            <center style="position: fixed;bottom: 0;width: 100%;margin-bottom: 10px;font-size: 13px;"
+                class="info opacity-transition" id="credits">
+
+                <h3 style="margin-top: 0;padding-top: 0;">
+                    <br />
 			<a  style='font-size:20px;text-align:center;'>
              </b>&#x5F00;&#x53D1;&#x4EBA;&#x5458;:Specter,Andy Nguyen,sleirsgoevy,flatz,LightningMods, ChendoChap, astrelsky, illusion,zecoxao,laureeeeeee,cheburek3000...</b></a>
 			 <br>
 			<a  style='font-size:20px;text-align:center;'>
-             2024.01.14</b></a>
+             2024.01.29</b></a>
         </h3>
             </center>
         </div>
     </div>
 
+    <div id="menu-overlay" style="position: fixed; top: -100%; left: 0; width: 100%; min-height: 100%; height: 100%; background-color: #111111d0; opacity:0;" class="opacity-transition"></div>
+    <div id="menu-bar-wrapper" style="position: absolute; top: 0; right: -500px; width: 320px; min-height: 100%; height: 100%; padding: 16px; box-sizing: border-box; transition: right 0.35s ease-in-out;">
+        <div id="menu-bar" style="position: relative;top:0;left: 0; width:100%;height:100%; background-color: #161622; border-radius: 16px; padding: 15px; box-sizing: border-box;">
+            <p style="margin: 10px; font-weight: bold;">Webkit exploit type:</p>
+            <div style="margin: 10px;" >
+                <input type="radio" id="wk-exploit-psfree" name="wk-exploit" value="psfree" onchange="wk_expoit_type_changed(event)" >
+                <label for="psfree" >PSFree</label><br>
+                <input type="radio" id="wk-exploit-fontface" name="wk-exploit" value="fontface" onchange="wk_expoit_type_changed(event)">
+                <label for="fontface">FontFace</label>
+            </div>
+        </div>
+    </div>
+    
 </body>
 
 </html>

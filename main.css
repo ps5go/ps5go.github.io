@@ -92,7 +92,7 @@ body {
 }
 
 input:focus {
-    outline: none;
+    outline:none;
 }
 
 .btn {
@@ -122,9 +122,9 @@ input:focus {
 }
 
 
-.small-btn {
-    padding-top: 5px;
-    padding-bottom: 5px;
+.small-btn{
+    padding-top: 5px; 
+    padding-bottom: 5px; 
     padding-left: 0;
     padding-right: 0;
     background-color: #223;
@@ -132,9 +132,9 @@ input:focus {
     min-width: unset;
 }
 
-.icon-btn {
-    padding-top: 0px;
-    padding-bottom: 0px;
+.icon-btn{
+    padding-top: 0px; 
+    padding-bottom: 0px; 
     padding-left: 0;
     padding-right: 0;
     background-color: unset;
@@ -147,15 +147,12 @@ input:focus {
     font-size: 24px;
 }
 
-.icon-btn:hover {
+.icon-btn:hover{
     background-color: #555 !important;
     color: #fff !important;
 }
 
-.btn:hover {
-    background-color: red;
-    color: #fff;
-}
+
 
 a:active,
 a:focus {
@@ -182,18 +179,18 @@ a:focus {
 
 
 .payload-description {
-    color: #959595;
+    color:  #fff;
     margin: 0;
     padding: 0;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     line-height: 32px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .btn:hover p.payload-description {
-    color: #666;
+    color:  #fff;
 }
 
 .payload-author {
@@ -205,7 +202,7 @@ a:focus {
     white-space: nowrap;
     line-height: 24px;
     font-size: 13px;
-    font-weight: normal;
+    font-weight:normal;
 }
 
 .info a {
@@ -282,55 +279,25 @@ a:focus {
     transform: translateY(-100%);
 }
 
-body {
-    margin: 0;
-    background-color: #131313;
-    color: #fff;
+
+input[type='radio'] {
+    opacity: 0;
+    position: absolute;
 }
 
-#PScontainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+input[type='radio'] + label:before {
+    content: '';
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    vertical-align: middle;
 }
 
-@keyframes rotationCycle {
-    0% {
-        transform: rotate(-90deg) scale(0)
-    }
-
-    40% {
-        transform: rotate(0deg) scale(1)
-    }
-
-    50% {
-        transform: rotate(0deg) scale(1)
-    }
-
-    100% {
-        transform: rotate(90deg) scale(0)
-    }
+input[type='radio']:checked + label:before {
+    background: #fff;
 }
-
-#PScontainer img {
-    animation-name: rotationCycle;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    height: 60px;
-    width: auto;
-    padding: 10px;
-}
-
-#PScontainer img:nth-child(2) {
-    animation-delay: 200ms
-}
-
-#PScontainer img:nth-child(3) {
-    animation-delay: 300ms
-}
-
-#PScontainer img:nth-child(4) {
-    animation-delay: 400ms
-	}
