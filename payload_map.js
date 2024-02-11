@@ -2,13 +2,13 @@ const payload_map =
     [
         {
             displayTitle: 'kstuff\u4e00\u952e\u6298\u817e',
-            description: '\u9002\u7528\u4e8e3.xx-4.xx\u7cfb\u7edf',
+            description: '\u9002\u7528\u4e8e3.xx-4.xx\u7cfb\u7edf(PS4)',
             fileName: 'ps5-kstuff.bin',
 
         },
 		{
-            displayTitle: 'etaHEN1.5b\u4e00\u952e\u6298\u817e',
-            description: '\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e3.xx-4.xx\u7cfb\u7edf.',
+            displayTitle: 'etaHEN1.6b\u4e00\u952e\u6298\u817e',
+            description: '\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e3.xx-4.xx\u7cfb\u7edf(PS4/5)',
             fileName: 'etahen.bin',
 
         },
