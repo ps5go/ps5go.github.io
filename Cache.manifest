@@ -12,6 +12,7 @@ offsets/4.03.js
 offsets/4.50.js
 offsets/4.51.js
 payloads/Cache_remove.elf
+payloads/etahen.bin
 payloads/elfldr.elf
 payloads/ftps5-p.elf
 payloads/ps5-kstuff-v1.1.bin
