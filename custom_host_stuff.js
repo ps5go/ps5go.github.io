@@ -28,9 +28,9 @@ async function run(wkonly = false, animate = true) {
         await run_psfree(fw_str);
 
     } catch (error) {
-        log("\u201cWebkit\u6f0f\u6d1e\u5229\u7528\u5931\u8d25: " + error, LogLevel.ERROR);
+        log("Webkit exploit failed: " + error, LogLevel.ERROR);
 
-        log("2\u79d2\u540e\u91cd\u8bd5...", LogLevel.LOG);
+        log("Retrying in 2 seconds...", LogLevel.LOG);
         await new Promise((resolve) => setTimeout(resolve, 2000));
         window.location.reload();
         return; // this is necessary
@@ -39,11 +39,11 @@ async function run(wkonly = false, animate = true) {
     try {
         await main(window.p, wkonly); // if all goes well, this should block forever
     } catch (error) {
-        log("\u5185\u6838\u6f0f\u6d1e\u5229\u7528\u5931\u8d25\uff1a: " + error, LogLevel.ERROR);
+        log("Kernel exploit/main() failed: " + error, LogLevel.ERROR);
         // p.write8(new int64(0,0), 0); // crash
     }
 
-    log("4\u79d2\u540e\u91cd\u8bd5...", LogLevel.LOG);
+    log("Retrying in 4 seconds...", LogLevel.LOG);
     await new Promise((resolve) => setTimeout(resolve, 4000));
     window.location.reload();
 }
@@ -128,55 +128,55 @@ function registerAppCacheEventHandlers() {
             createOrUpdateAppCacheToast('Offline.', 2000);
         } else {
             // this is redundant
-            createOrUpdateAppCacheToast("\u68c0\u67e5\u53ef\u7528\u66f4\u65b0...");
+            createOrUpdateAppCacheToast("Checking for updates...");
         }
     }
 
     appCache.addEventListener('cached', function (e) {
-        createOrUpdateAppCacheToast('\u7f13\u5b58\u5b8c\u6210.', 1500);
+        createOrUpdateAppCacheToast('Finished caching site.', 1500);
     }, false);
 
     appCache.addEventListener('checking', function (e) {
-        createOrUpdateAppCacheToast('\u68c0\u67e5\u5347\u7ea7\u6587\u4ef6...');
+        createOrUpdateAppCacheToast('Checking for updates...');
     }, false);
 
     appCache.addEventListener('downloading', function (e) {
-        createOrUpdateAppCacheToast('\u4e0b\u8f7d\u6587\u4ef6...');
+        createOrUpdateAppCacheToast('Downloading new cache...');
     }, false);
 
     appCache.addEventListener('error', function (e) {
         // only show error toast if we're online
         if (navigator.onLine) {
-            createOrUpdateAppCacheToast('\u7f13\u5b58\u7ad9\u70b9\u65f6\u51fa\u9519\u3002.', 5000);
+            createOrUpdateAppCacheToast('Error while caching site.', 5000);
         } else {
-            createOrUpdateAppCacheToast('\u79bb\u7ebf\u6a21\u5f0f.', 2000);
+            createOrUpdateAppCacheToast('Offline.', 2000);
         }
     }, false);
 
     appCache.addEventListener('noupdate', function (e) {
-        createOrUpdateAppCacheToast('\u7f13\u5b58\u662f\u6700\u65b0\u7684.', 1500);
+        createOrUpdateAppCacheToast('Cache is up-to-date.', 1500);
     }, false);
 
     appCache.addEventListener('obsolete', function (e) {
-        createOrUpdateAppCacheToast('\u7f51\u7ad9\u5df2\u8fc7\u65f6.');
+        createOrUpdateAppCacheToast('Site is obsolete.');
     }, false);
 
     appCache.addEventListener('progress', function (e) {
         let percentage = Math.round((e.loaded / e.total) * 100);
 
-        createOrUpdateAppCacheToast('\u4e0b\u8f7d\u8fdb\u5ea6... ' + percentage + '%');
+        createOrUpdateAppCacheToast('Downloading new cache... ' + percentage + '%');
 
         // the last item takes an unreasonably long time to complete (with a big update)
         // ig its doing some extra stuff before the last event is fired
         // so show a new message for it
         if (e.loaded + 1 == e.total) {
-            createOrUpdateAppCacheToast("\u5904\u7406\u4e2d...\u8bf7\u7b49\u5f85.");
+            createOrUpdateAppCacheToast("Processing... This may take a minute.");
         }
     }, false);
 
     appCache.addEventListener('updateready', function (e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-            createOrUpdateAppCacheToast('\u7f51\u9875\u5df2\u66f4\u65b0\uff0c\u9000\u51fa\u5237\u65b0\u4ee5\u5207\u6362\u5230\u6700\u65b0\u7248\u672c');
+            createOrUpdateAppCacheToast('The site was updated. Refresh to switch to updated version');
         }
     }, false);
 }
