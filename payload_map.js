@@ -42,7 +42,7 @@ const payload_map = [
     },
     {
         displayTitle: "kstuff\u4e00\u952e\u6298\u817e",
-        description: "\u9002\u7528\u4e8e3.xx-5.xx\u7cfb\u7edf",
+        description: "\u9002\u7528\u4e8e3.xx-5.xx\u7cfb\u7edf\u8fd0\u884cps4 fpkg",
         fileName: "kstuff.elf",
         author: "sleirsgoevy, john-tornblom, EchoStretch, buzzer-re, BestPig, LightningMods, zecoxao",
         projectSource: "https://github.com/EchoStretch/kstuff",
@@ -53,7 +53,7 @@ const payload_map = [
     },
     {
         displayTitle: "Byepervisor HEN",
-        description: "\u9002\u7528\u4e8e1.xx-2.xx\u7cfb\u7edf",
+        description: "\u9002\u7528\u4e8e1.xx-2.xx\u7cfb\u7edf\u8fd0\u884cps4 fpkg",
         fileName: "byepervisor.elf",
         author: "SpecterDev, ChendoChap, flatz, fail0verflow, Znullptr, kiwidog, sleirsgoevy, EchoStretch, LightningMods, BestPig, zecoxao", 
         projectSource: "https://github.com/EchoStretch/Byepervisor",
@@ -65,7 +65,7 @@ const payload_map = [
 
     {
         displayTitle: "websrv",
-        description: "Custom homebrew loader. Runs on port 8080.",
+        description: "\u81ea\u5236\u5c0f\u7a0b\u5e8f\u52a0\u8f7d\u5668\uff0c\u5de5\u4f5c\u7aef\u53e38080.",
         fileName: "websrv.elf",
         author: "john-tornblom",
         projectSource: "https://github.com/ps5-payload-dev/websrv",
