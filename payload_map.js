@@ -37,7 +37,7 @@ const payload_map = [
         author: "LightningMods, Buzzer, sleirsgoevy, ChendoChap, astrelsky, illusion, CTN, SiSTR0, Nomadic",
         projectSource: "https://github.com/etaHEN/etaHEN",
         binarySource: "https://github.com/etaHEN/etaHEN/blob/ea3b04a60f911d31e3888a0f98a57b3cccfe787c/etaHEN-2.2B.bin",
-        version: "2.2b",
+        version: "2.3b",
         toPort: 9021
     },
     {
@@ -108,4 +108,5 @@ const payload_map = [
     }
 
 ];
+
 
