@@ -31,9 +31,9 @@ const payload_map = [
     //     supportedFirmwares: ["1.", "2.", "3.", "4.", "5."]
     // },
     {
-        displayTitle: "etaHEN2.2b\u4e00\u952e\u6298\u817e",
+        displayTitle: "etaHEN2.3b\u4e00\u952e\u6298\u817e",
         description: "\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e3.xx-5.xx\u7cfb\u7edf.",
-        fileName: "etaHEN-2.2B.bin",
+        fileName: "etaHEN-2.3B.bin",
         author: "LightningMods, Buzzer, sleirsgoevy, ChendoChap, astrelsky, illusion, CTN, SiSTR0, Nomadic",
         projectSource: "https://github.com/etaHEN/etaHEN",
         binarySource: "https://github.com/etaHEN/etaHEN/blob/ea3b04a60f911d31e3888a0f98a57b3cccfe787c/etaHEN-2.2B.bin",
@@ -47,7 +47,7 @@ const payload_map = [
         author: "sleirsgoevy, john-tornblom, EchoStretch, buzzer-re, BestPig, LightningMods, zecoxao",
         projectSource: "https://github.com/EchoStretch/kstuff",
         binarySource: "https://github.com/EchoStretch/kstuff/actions/runs/14686953552",
-        version: "1.3-r3",
+        version: "1.6",
         supportedFirmwares: ["3.", "4.", "5."],
         toPort: 9021
     },
@@ -108,3 +108,4 @@ const payload_map = [
     }
 
 ];
+
