@@ -31,13 +31,13 @@ const payload_map = [
     //     supportedFirmwares: ["1.", "2.", "3.", "4.", "5."]
     // },
     {
-        displayTitle: "etaHEN2.4b\u4e00\u952e\u6298\u817e",
+        displayTitle: "etaHEN2.5b\u4e00\u952e\u6298\u817e",
         description: "\u5168\u80fd\u6298\u817e\u63d2\u4ef6\uff0c\u9002\u5e94\u4e8e3.xx-5.xx\u7cfb\u7edf.",
-        fileName: "etaHEN-2.4B.bin",
+        fileName: "etaHEN-2.5B.bin",
         author: "LightningMods, Buzzer, sleirsgoevy, ChendoChap, astrelsky, illusion, CTN, SiSTR0, Nomadic",
         projectSource: "https://github.com/etaHEN/etaHEN",
         binarySource: "https://github.com/etaHEN/etaHEN/blob/ea3b04a60f911d31e3888a0f98a57b3cccfe787c/etaHEN-2.2B.bin",
-        version: "2.4b",
+        version: "2.5b",
         toPort: 9021
     },
     {
@@ -108,6 +108,7 @@ const payload_map = [
     }
 
 ];
+
 
 
 
