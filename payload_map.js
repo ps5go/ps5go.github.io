@@ -65,7 +65,7 @@ const payload_map = [
     {
         displayTitle: "kstuff Testkit\u4e00\u952e\u6298\u817e",
         description: "\u9002\u7528\u4e8e3.xx-5.xx\u7cfb\u7edf\u8fd0\u884cps4 fpkg",
-        fileName: "kstuff_testkit.elf",
+        fileName: "kstuff_testkit.bin",
         author: "sleirsgoevy, john-tornblom, EchoStretch, buzzer-re, BestPig, LightningMods, zecoxao",
         projectSource: "https://github.com/EchoStretch/kstuff",
         binarySource: "https://github.com/EchoStretch/kstuff/actions/runs/14686953552",
@@ -76,7 +76,7 @@ const payload_map = [
 	    {
         displayTitle: "kstuff Devkit\u4e00\u952e\u6298\u817e",
         description: "\u9002\u7528\u4e8e3.xx-5.xx\u7cfb\u7edf\u8fd0\u884cps4 fpkg",
-        fileName: "devkit_kstuff.elf",
+        fileName: "devkit_kstuff.bin",
         author: "sleirsgoevy, john-tornblom, EchoStretch, buzzer-re, BestPig, LightningMods, zecoxao",
         projectSource: "https://github.com/EchoStretch/kstuff",
         binarySource: "https://github.com/EchoStretch/kstuff/actions/runs/14686953552",
@@ -129,6 +129,7 @@ const payload_map = [
     }
 
 ];
+
 
 
 
