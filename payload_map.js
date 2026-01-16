@@ -101,7 +101,7 @@ const payload_map = [
         author: "john-tornblom",
         projectSource: "https://github.com/ps5-payload-dev/ftpsrv",
         binarySource: "https://github.com/ps5-payload-dev/pacbrew-repo/actions/runs/14012252230",
-        version: "0.11.3",
+        version: "1.15.B8",
         toPort: 9021
     },
 
@@ -129,6 +129,7 @@ const payload_map = [
     }
 
 ];
+
 
 
 
