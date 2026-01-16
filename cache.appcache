@@ -44,6 +44,8 @@ payloads/elfldr.elf
 payloads/etaHEN-2.5B.bin
 payloads/ftpsrv.elf
 payloads/kstuff.elf
+payloads/kstuff_testkit.bin
+payloads/devkit_kstuff.bin
 payloads/ps5-versions.elf
 payloads/websrv.elf
 payloads/cache_remove.elf
