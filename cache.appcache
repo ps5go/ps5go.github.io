@@ -46,6 +46,7 @@ payloads/ftpsrv.elf
 payloads/kstuff.elf
 payloads/ps5-versions.elf
 payloads/websrv.elf
+payloads/ps5-linux.elf
 payloads/cache_remove.elf
 psfree/COPYING
 psfree/alert.js
