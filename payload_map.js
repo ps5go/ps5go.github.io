@@ -62,7 +62,17 @@ const payload_map = [
         supportedFirmwares: ["1.00", "1.01", "1.02", "1.12", "1.14", "2.00", "2.20", "2.25", "2.26", "2.30", "2.50", "2.70"],
         toPort: 9021
     },
-    
+     {
+        displayTitle: "PS5 Linux",
+        description: "\ps5Linux 3xx-4xx.",
+        fileName: "ps5-linux.elf",
+        author: "Andy",
+        projectSource: "https://github.com/ps5-linux/ps5-linux-loader",
+        binarySource: "https://github.com/ps5-linux/ps5-linux-loader/releases/download/v1.0/ps5-linux-loader.elf",
+        version: "1.0b",
+		supportedFirmwares: ["3.", "4."],
+        toPort: 9021
+    },
     {
         displayTitle: "websrv",
         description: "\u81ea\u5236\u5c0f\u7a0b\u5e8f\u52a0\u8f7d\u5668\uff0c\u5de5\u4f5c\u7aef\u53e38080.",
