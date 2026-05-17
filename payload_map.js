@@ -64,7 +64,7 @@ const payload_map = [
     },
      {
         displayTitle: "PS5 Linux",
-        description: "\ps5Linux 3xx-4xx.",
+        description: "\ps5Linux 3xx-6xx.",
         fileName: "ps5-linux.elf",
         author: "Andy",
         projectSource: "https://github.com/ps5-linux/ps5-linux-loader",
